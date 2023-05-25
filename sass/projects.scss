@@ -1,2 +1,38 @@
+
 @use "./mixins.scss" as mixin;
 @use "./variables.scss" as v;
+.projects {
+  width: 100%;
+  height: 100vh;
+  &-container {
+    width: 75%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    height: 85%;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    &-comp {
+      width: 25%;
+      height: auto;
+
+      .hundred {
+        width: 95%;
+        height: 290px;
+        border: 1px solid black;
+        border-radius:10px ;
+        background-color: black;
+        margin: 15px auto;
+      }
+      .fifty {
+        width: 95%;
+        height: 420px;
+        border-radius:10px ;
+        border: 1px solid black;
+        background-color: rgb(255, 9, 9);
+        margin: 15px auto;
+      }
+    }
+  }
+}
+
