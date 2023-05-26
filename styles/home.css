@@ -1,3 +1,7 @@
+* {
+  scroll-behavior: sm;
+}
+
 header {
   position: absolute;
   width: 100%;
@@ -6,6 +10,7 @@ header {
 header nav {
   width: 100%;
   height: auto;
+  max-height: 720px;
   background-color: transparent;
   display: flex;
   justify-content: space-between;
@@ -46,12 +51,14 @@ main {
   width: 100%;
   height: 100%;
   background-color: #d6d6d6;
+  max-height: 720px;
 }
 main .home-content {
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: row;
+  position: relative;
 }
 main .home-content-containor1 {
   background-color: #5a5a5a;
@@ -83,6 +90,7 @@ main .home-content-containor1-2 {
   width: 100%;
   position: absolute;
   bottom: 0;
+  max-height: 720px;
 }
 main .home-content-containor1-2 p {
   color: white;
@@ -92,6 +100,7 @@ main .home-content-containor1-2 p {
   font-size: 40px;
   word-spacing: 12px;
   z-index: 2;
+  max-height: 720px;
 }
 main .home-content-containor1 img {
   width: 290px;

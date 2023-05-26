@@ -1,12 +1,17 @@
+@use "./mixins.scss" as mixin;
+@use "./variables.scss" as v;
 .projects {
   width: 100%;
   height: 100vh;
+  background-color: v.$color-3;
+  position: relative;
   &-container {
     width: 75%;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     height: 85%;
     overflow-y: scroll;
     display: flex;
+    scroll-behavior: smooth;
     flex-direction: row;
     justify-content: space-between;
     &-comp {
@@ -17,18 +22,42 @@
         width: 95%;
         height: 290px;
         border: 1px solid black;
-        border-radius:10px ;
-        background-color: black;
+        border-radius: 10px;
+        background-color: v.$color-1;
         margin: 15px auto;
       }
       .fifty {
         width: 95%;
         height: 420px;
-        border-radius:10px ;
+        border-radius: 10px;
         border: 1px solid black;
-        background-color: rgb(255, 9, 9);
+        background-color: v.$color-2;
         margin: 15px auto;
       }
+    }
+  }
+  &-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  &-container {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  a {
+    padding: 15px;
+    position: absolute;
+    background-color: rgba(210, 208, 203, 0.352);
+    border: 1px solid rgba(62, 60, 60, 0.411);
+    box-shadow: 1px 1px 50px -2px v.$color-3;
+    border-radius: 10px;
+    bottom: 60px;
+    right: 48%;
+    i {
+      color: v.$unique-color;
+      font-size: 70px;
+      -webkit-text-stroke: 7px v.$unique-color;
     }
   }
 }
