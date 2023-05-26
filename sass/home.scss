@@ -1,13 +1,12 @@
 @use "./mixins.scss" as mixin;
 @use "./variables.scss" as v;
-*{
+* {
   scroll-behavior: sm;
 }
 header {
   position: absolute;
   width: 100%;
   z-index: 3;
-
   nav {
     width: 100%;
     height: auto;
@@ -16,7 +15,11 @@ header {
     display: flex;
     justify-content: space-between;
     padding: 50px 0px 0px 20px;
-
+    opacity: 0;
+    transform: rotatey(90deg);
+    transition: transform 1s ease-in-out ;
+    transition: opacity 1s ease-in-out;
+    
     .nav-title {
       padding: 0px 80px;
 
@@ -34,55 +37,63 @@ header {
         display: flex;
         margin: 0px 350px 0px 0px;
         list-style: none;
+      
 
         li {
           padding: 0px 80px;
           display: flex;
           margin: auto;
-          font-size: 25px;
+          font-size: 20px;
           justify-content: center;
         }
       }
+    
     }
   }
   hr {
-    width: 70%;
+    width: 0%;
     top: 100px;
     left: 15%;
     border-radius: 10px;
+    transition: width 0.45s ease-in-out;
   }
+  hr.open{
+    width: 70%;
+  }
+}
+nav.open{
+  opacity: 1;
 }
 main {
   width: 100%;
   height: 100%;
   background-color: v.$color-2;
-  max-height: 720px;
   .home-content {
     width: 100%;
-    height: 100%;
+    height: 805px;
     display: flex;
     flex-direction: row;
     position: relative;
     &-containor1 {
       background-color: v.$color-1;
-      height: 100vh;
+      height: 100%;
       width: 65%;
       position: relative;
 
       &-1 {
-        margin: 25vh auto auto 8vw;
+        margin: 25% auto auto 8vw;
         padding: 20px;
-        
+
         h2 {
-          font-size: 48px;
+          font-size: 43px;
         }
         p {
-          font-size: 25px;
+          font-size: 20px;
           margin: 60px auto;
         }
         a {
           text-decoration: none;
-          font-size: 30px;
+          font-size: 25px;
           background-color: v.$unique-color;
           position: relative;
           padding-right: 30px;
@@ -90,33 +101,43 @@ main {
       }
 
       &-2 {
-        height: 20vh;
+        height: 20%;
         background-color: v.$color-3;
         width: 100%;
         position: absolute;
         bottom: 0;
-        max-height: 720px;
+      }
+      &-team {
+        position: absolute;
+        width: 80%;
+        background-color: rgba(255, 68, 0, 0);
+        height: 30%;
+        bottom: 20px;
+        display: flex;
+        flex-direction: row;
+        right: 15px;
         p {
-          color: white;
-          position: inherit;
-          right: 16vw;
-          top: 50px;
+          color: v.$color-2;
+          position: absolute;
+          right: 20%;
+          top: 60%;
+          z-index: 2;
           font-size: 40px;
           word-spacing: 12px;
-          z-index: 2;
-          max-height: 720px;
+          text-shadow: 3px 1px 1px rgb(0, 0, 0);
         }
-      }
-      img {
-        @include mixin.team-image;
+        img {
+          @include mixin.team-image;
+        }
       }
     }
     &-containor2 {
       background-color: v.$color-2;
       width: 35%;
-      height: 100vh;
+      height: 100%;
       display: flex;
       justify-content: center;
+      padding-top: 40px;
 
       img {
         @include mixin.solo-image;
@@ -125,7 +146,7 @@ main {
   }
 
   .skill {
-    height: 100vh;
+    height: auto;
     width: 100%;
     margin: auto;
     //margin: 25vh auto auto 8vw;
@@ -133,7 +154,7 @@ main {
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    padding: 80px;
+
     h3 {
       padding: 30px;
       width: auto;
@@ -141,18 +162,22 @@ main {
     &-cards {
       margin: 20px auto;
       padding: 30px;
-      width: 85%;
+      width: 75%;
       background-color: v.$color-1;
       border-radius: 10px;
       display: grid;
+      justify-content: center;
+      align-items: center;
       grid-template-columns: auto auto auto auto;
       gap: 20px;
       row-gap: 80px;
 
       .skill-card {
-        width: 200px;
+        width: 70%;
         margin: 0px;
-        text-align: centerl;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         padding: 20px;
         img {
           width: 95%;
