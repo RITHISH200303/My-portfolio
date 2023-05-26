@@ -1,3 +1,7 @@
+* {
+  scroll-behavior: sm;
+}
+
 header {
   position: absolute;
   width: 100%;
@@ -6,10 +10,15 @@ header {
 header nav {
   width: 100%;
   height: auto;
+  max-height: 720px;
   background-color: transparent;
   display: flex;
   justify-content: space-between;
   padding: 50px 0px 0px 20px;
+  opacity: 0;
+  transform: rotatey(90deg);
+  transition: transform 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
 }
 header nav .nav-title {
   padding: 0px 80px;
@@ -32,14 +41,22 @@ header nav .nav-options ul li {
   padding: 0px 80px;
   display: flex;
   margin: auto;
-  font-size: 25px;
+  font-size: 20px;
   justify-content: center;
 }
 header hr {
-  width: 70%;
+  width: 0%;
   top: 100px;
   left: 15%;
   border-radius: 10px;
+  transition: width 0.45s ease-in-out;
+}
+header hr.open {
+  width: 70%;
+}
+
+nav.open {
+  opacity: 1;
 }
 
 main {
@@ -49,81 +66,95 @@ main {
 }
 main .home-content {
   width: 100%;
-  height: 100%;
+  height: 805px;
   display: flex;
   flex-direction: row;
+  position: relative;
 }
 main .home-content-containor1 {
   background-color: #5a5a5a;
-  height: 100vh;
+  height: 100%;
   width: 65%;
   position: relative;
 }
 main .home-content-containor1-1 {
-  margin: 25vh auto auto 8vw;
+  margin: 25% auto auto 8vw;
   padding: 20px;
 }
 main .home-content-containor1-1 h2 {
-  font-size: 48px;
+  font-size: 43px;
 }
 main .home-content-containor1-1 p {
-  font-size: 25px;
+  font-size: 20px;
   margin: 60px auto;
 }
 main .home-content-containor1-1 a {
   text-decoration: none;
-  font-size: 30px;
+  font-size: 25px;
   background-color: #b5ff87;
   position: relative;
   padding-right: 30px;
 }
 main .home-content-containor1-2 {
-  height: 20vh;
+  height: 20%;
   background-color: #2c2c2c;
   width: 100%;
   position: absolute;
   bottom: 0;
 }
-main .home-content-containor1-2 p {
-  color: white;
-  position: inherit;
-  right: 16vw;
-  top: 50px;
+main .home-content-containor1-team {
+  position: absolute;
+  width: 80%;
+  background-color: rgba(255, 68, 0, 0);
+  height: 30%;
+  bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  right: 15px;
+}
+main .home-content-containor1-team p {
+  color: #d6d6d6;
+  position: absolute;
+  right: 20%;
+  top: 60%;
+  z-index: 2;
   font-size: 40px;
   word-spacing: 12px;
-  z-index: 2;
+  text-shadow: 3px 1px 1px rgb(0, 0, 0);
 }
-main .home-content-containor1 img {
-  width: 290px;
-  height: 333px;
+main .home-content-containor1-team img {
+  width: 40%;
+  height: 99%;
   border-radius: 10px;
-  position: absolute;
+  position: inherit;
+  right: 2px;
   z-index: 1;
-  right: 5vw;
+  border: 1px solid #d6d6d6;
 }
 main .home-content-containor2 {
   background-color: #d6d6d6;
   width: 35%;
-  height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: center;
+  padding-top: 40px;
 }
 main .home-content-containor2 img {
   width: 70%;
   height: 60%;
   border-radius: 10px;
   z-index: 1;
-  margin: 350px auto;
+  margin: auto;
+  border: 1px solid #2c2c2c;
 }
 main .skill {
-  height: 100vh;
+  height: auto;
   width: 100%;
   margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  padding: 80px;
 }
 main .skill h3 {
   padding: 30px;
@@ -132,18 +163,22 @@ main .skill h3 {
 main .skill-cards {
   margin: 20px auto;
   padding: 30px;
-  width: 85%;
+  width: 75%;
   background-color: #5a5a5a;
   border-radius: 10px;
   display: grid;
+  justify-content: center;
+  align-items: center;
   grid-template-columns: auto auto auto auto;
   gap: 20px;
   row-gap: 80px;
 }
 main .skill-cards .skill-card {
-  width: 200px;
+  width: 70%;
   margin: 0px;
-  text-align: centerl;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 20px;
 }
 main .skill-cards .skill-card img {
