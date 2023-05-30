@@ -2,6 +2,15 @@
   scroll-behavior: sm;
 }
 
+*::-webkit-scrollbar {
+  background-color: #d6d6d6;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #5a5a5a;
+  border-radius: 10px;
+}
+
 header {
   position: absolute;
   width: 100%;
@@ -10,15 +19,13 @@ header {
 header nav {
   width: 100%;
   height: auto;
-  max-height: 720px;
   background-color: transparent;
   display: flex;
   justify-content: space-between;
   padding: 50px 0px 0px 20px;
   opacity: 0;
-  transform: rotatey(90deg);
-  transition: transform 1s ease-in-out;
-  transition: opacity 1s ease-in-out;
+  transition: transform 1s ease-in;
+  transition: opacity 1s ease-in;
 }
 header nav .nav-title {
   padding: 0px 80px;
